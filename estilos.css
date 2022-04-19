@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Inter";
+}
+
+body{
+    background-color: #e5e5e5;
+}
+
+.header-index{
+    padding: 1em 2em;
+}
+
+.header-index a img:hover{
+    transition: 1s all;
+    transform: rotateX(360deg) scale(1.3);
+    
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em;
+}
+
+.seccion-principal{
+ 
+    width: 75%;
+    display: inline-block;
+    height: 700px;
+    box-sizing: border-box;
+}
+
+.area-principal{
+    display: block;
+    box-sizing: border-box;
+    width: 90%;
+    height: 600px;
+    padding: 3em 5em;
+    margin: 0 auto;
+    color: #0a3871;
+    background-color: #e5e5e5;
+    font-size: 32px;
+    line-height: 48px;
+    border: none;
+    resize: none;
+}
+.area-principal::placeholder{
+    color: #0a3871;
+}
+.area-principal:focus{
+    outline: none;
+
+}
+.area-principal:focus::placeholder{
+    outline: none;
+    opacity: .2;
+}
+
+.contenedor-botones{
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+}
+
+.btn-encriptar, .btn-desencriptar{
+    margin: 1em;
+    width: 20%;
+    height: 3em;
+    border-radius: 24px;
+    transition: 1s all;
+}
+.btn-encriptar:active{
+    transition: .2s all;
+    background-color: darkturquoise;
+    color: #0a3871;
+    border: 1px solid #0a3871;
+}
+.btn-desencriptar:active{
+    transition: .2s all;
+    background-color: darkturquoise;
+    color: #fff;
+}
+
+.btn-encriptar{
+    border: none;
+    background-color: #0a3871;
+    color: #fff;
+}
+.btn-desencriptar{
+    border: 1px solid #0a3871;
+    color: #0a3871;
+}
+
+.btn-encriptar:hover, .btn-desencriptar:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+aside{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 48px;
+    width: 20%;
+    height: 748px;
+    background-color: #fff;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+}
+aside div{
+    width: 90%;
+}
+
+aside div img{
+    width: 100%;
+}
+
+.texto-aside{
+    margin-top: 3em;
+    text-align: center;
+}
+.texto-aside h3{
+    font-size: 24px;
+    font-weight: bold;
+}
+.texto-aside p {
+    margin-top: 1em;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 3em;
+    margin-top: 2em;
+    justify-content: center;
+    background-color: #0a3871;
+    color: #fff;
+    align-items: center;
+    font-size: 14px;
+}
+

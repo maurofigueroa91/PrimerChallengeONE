@@ -1,0 +1,38 @@
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "header header header"
+                        "section section aside"
+                        "footer footer footer";
+}
+
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "header header header"
+                        "main main main"
+                        "footer footer footer";
+}
+
+main{
+    grid-area: main;
+}
+
+header{
+    grid-area: header;
+}
+section{
+    grid-area: section;
+
+}
+
+aside{
+    grid-area: aside;
+}
+
+footer{
+    grid-area: footer;
+}
