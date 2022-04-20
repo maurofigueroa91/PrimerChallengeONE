@@ -40,7 +40,6 @@ function rotarAside(){
     }else{
         alert("Este mensaje ya fue encriptado");
     }
-
  }
 
  function desencriptarTexto(){
@@ -52,73 +51,33 @@ function rotarAside(){
             alert("debes ingresar el mensaje a desencriptar");
             area.focus()
         }
-        alert(quitarEncriptado(textArea))
+        
  }
 
- function agregarEncriptado(texto){
-     var textos = "";
-    for(var i = 0; i < texto.length ; i++){
-        if(texto.charAt(i) == "a"){
-            textos += texto.charAt(i) + "i"; 
-        }
-        else if(texto.charAt(i) == "e"){
-            textos += texto.charAt(i) + "nter"; 
-        }
-        else if(texto.charAt(i) == "i"){
-            textos += texto.charAt(i) + "mes"; 
-        }
-        else if(texto.charAt(i) == "o"){
-            textos += texto.charAt(i) + "ber"; 
-        }
-        else if(texto.charAt(i) == "u"){
-            textos += texto.charAt(i) + "fat"; 
-        }
-        else{textos += texto.charAt(i);
-        }
-    }
-    return textos
- }
+
+function agregarEncriptado(texto){
+    var textos = "";
+    textos = texto.replace(/a/g,"AI");
+    textos = textos.replace(/e/g,"ENTER");
+    textos = textos.replace(/i/g,"IMES");
+    textos = textos.replace(/o/g,"OBER");
+    textos = textos.replace(/u/g,"UFAT");
+    textoEncriptado = textos;
+    return textos.toLowerCase();
+    
+   
+
+}
+
 
  function quitarEncriptado(texto){
     var textos = "";
-   for(var i = 0; i < texto.length ; i++){
-       if(texto.charAt(i) == "a"){
-           textos += "a"
-        //    texto.charAt(i+1) = "";
-       }
-       else if(texto.charAt(i) == "e"){
-           textos += "e"
-        //    texto.charAt(i+1) = "";
-        //    texto.charAt(i+2) = "";
-        //    texto.charAt(i+3) = "";
-        //    texto.charAt(i+4) = "";
-       }
-       else if(texto.charAt(i) == "i"){
-           textos += "i"
-        //    texto.charAt(i+1) = "";
-        //    texto.charAt(i+2) = "";
-        //    texto.charAt(i+3) = "";
-       }
-       else if(texto.charAt(i) == "o"){
-           textos += "o"
-        //    texto.charAt(i+1) = "";
-        //    texto.charAt(i+2) = "";
-        //    texto.charAt(i+3) = "";
-       }
-       else if(texto.charAt(i) == "u"){
-           textos += "u"
-    //        texto.charAt(i+1) = "";
-    //        texto.charAt(i+2) = "";
-    //        texto.charAt(i+3) = "";
-       }
-       else{
-           textos += texto.charAt(i);
-       }
-   }
-
-
-   alert("hola")
-   return textos;
-}
+    textos = texto.replace(/ai/g,"a");
+    textos = textos.replace(/enter/g,"e");
+    textos = textos.replace(/imes/g,"i");
+    textos = textos.replace(/ober/g,"o");
+    textos = textos.replace(/ufat/g,"u");
+    return textos
+ }
 
  

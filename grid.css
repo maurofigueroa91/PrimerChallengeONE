@@ -2,9 +2,9 @@ main{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: "header header header"
-                        "section section aside"
-                        "footer footer footer";
+    grid-template-areas: "section section aside"
+                        /* "section section aside" */
+                        /* "footer footer footer"; */
 }
 
 
@@ -36,3 +36,48 @@ aside{
 footer{
     grid-area: footer;
 }
+
+
+@media screen and (max-width:1024px){
+    html{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "section section section"
+                             "aside aside aside";
+
+    }
+    .contenedor{
+        height: 100vh;
+    }
+    .seccion-principal{
+        height: 40vh;
+        min-height: 0;
+    }
+    .aside{
+        height: 30vh;
+        min-height: 0;
+
+    }
+    .munieco-contenedor{
+        min-height: 0;
+        width: 95%;
+
+    }
+    .texto-atras{
+        margin: 0 auto;
+    }
+    .imagen-aside{
+        visibility: hidden;
+    }
+    .btn-copiar{
+        margin: 0;
+    }
+} 
