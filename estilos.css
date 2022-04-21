@@ -5,58 +5,85 @@
     font-family: "Inter";
 }
 
+html{
+    height : 100%;
+    position: relative;
+}
+
 body{
     background-color: #e5e5e5;
+    position: relative;
+    min-height: 100vh;
 }
 
-.header-index{
-    padding: 1em 2em;
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #000;
 }
 
-.header-index a img:hover{
+.encabezado{
+    width: 100%;
+    height: 64px;
+    padding: 12.8px 0 0 3%;
+    box-sizing: border-box;
+}
+
+.encabezado  a img{
+    width: 7rem;
     transition: 1s all;
-    transform: rotateX(360deg) scale(1.3);
-    
+}
+.encabezado a img:hover{
+    transform: scale(1.2) rotateY(360deg);
 }
 
-main{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2em;
+.principal{
+    height: 55em;
+    box-sizing: border-box;
 }
 
 .seccion-principal{
- 
+    width: 95%;
+    height: 95%;
+    box-sizing: border-box;
+}
+
+.area{
+    display: flex;
+    box-sizing: border-box;
     width: 75%;
-    display: inline-block;
-    height: 700px;
-    box-sizing: border-box;
-}
-
-.area-principal{
-    display: block;
-    box-sizing: border-box;
-    width: 90%;
-    height: 600px;
-    padding: 3em 5em;
-    margin: 0 auto;
-    color: #0a3871;
+    margin: auto;
+    height: 75%;
+    text-align: center;
+    padding: 80px 0;
     background-color: #e5e5e5;
-    font-size: 32px;
-    line-height: 48px;
-    border: none;
+    font-size: 2rem;
+    color: #0a3871;
     resize: none;
+    border: none;
+    
 }
-.area-principal::placeholder{
+
+.area:focus{
+    outline: none;
+}
+.area::placeholder{
     color: #0a3871;
 }
-.area-principal:focus{
-    outline: none;
-
+.area:focus::placeholder{
+    opacity: .3;
 }
-.area-principal:focus::placeholder{
-    outline: none;
-    opacity: .2;
+
+label{
+    position: absolute;
+    font-size: .8rem;
+}
+
+.icono-alert{
+    color: #0a3871;
+    vertical-align: bottom;
+    margin-right: 3px;
 }
 
 .contenedor-botones{
@@ -64,17 +91,20 @@ main{
     display: flex;
     position: relative;
     justify-content: center;
-
+    height: 20%;
 }
 
-.btn-encriptar, .btn-desencriptar{
-    margin: 1em;
-    width: 20%;
+.btn-encriptar, .btn-desencriptar, .btn-copiar{
+    font-size: 1rem;
+    margin: 0 auto;
+    margin: 2rem 1rem 0 1rem;
+    width: 12rem;
+    min-width: 7rem;
     height: 3em;
-    border-radius: 24px;
+    border-radius: 1.5rem;
     transition: 1s all;
 }
-.btn-encriptar:active{
+.btn-encriptar:active, .btn-copiar:active, .btn-limpiar:active{
     transition: .2s all;
     background-color: darkturquoise;
     color: #0a3871;
@@ -86,7 +116,7 @@ main{
     color: #fff;
 }
 
-.btn-encriptar{
+.btn-encriptar, .btn-copiar{
     border: none;
     background-color: #0a3871;
     color: #fff;
@@ -96,53 +126,127 @@ main{
     color: #0a3871;
 }
 
-.btn-encriptar:hover, .btn-desencriptar:hover{
+.btn-limpiar{
+    border:none;
+    background-color: #f44141;
+    color: #fff;
+    position: absolute;
+    margin: auto;
+    top:6rem;
+    font-size: 1rem;
+    width: 5rem;
+    height: 2em;
+    border-radius: 1.5rem;
+    transition: 1s all;
+}
+
+.btn-encriptar:hover, .btn-desencriptar:hover, .btn-copiar:hover, .btn-limpiar:hover{
     transform: scale(1.2);
     cursor: pointer;
 }
 
-aside{
-    box-sizing: border-box;
+
+.aside{
+    width: 95%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    position: relative;
-    bottom: 48px;
-    width: 20%;
-    height: 748px;
-    background-color: #fff;
-    border-radius: 25px;
-    justify-content: center;
-    align-items: center;
-}
-aside div{
-    width: 90%;
+    justify-content: flex-end;
+    overflow: hidden;
+
 }
 
-aside div img{
-    width: 100%;
+.munieco-contenedor{
+    position: relative;
+    box-sizing: border-box;
+    width: 60%;
+    height: 95%;
+    background-color: #fff;
+    border-radius: 24px;
+    min-width: 15rem;
+    transform-style: preserve-3d;
+    transition: 1.6s all;
+    
+}
+
+.munieco-adelante, .munieco-atras{
+    width: 95%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 24px;
+    min-width: 13.75rem;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    position: absolute;
+}
+.munieco-atras{
+    transform: rotateY(180deg);
+}
+
+
+.imagen-aside{
+    display: flex;
+    box-sizing: border-box;
+    height: 50%;
+}
+
+.imagen-aside img{
+    box-sizing: border-box;
+    width: 95%;
+    margin: auto;
 }
 
 .texto-aside{
-    margin-top: 3em;
+    box-sizing: border-box;
     text-align: center;
+    padding: 0 2rem;
+    height: 25%;
 }
 .texto-aside h3{
-    font-size: 24px;
-    font-weight: bold;
-}
-.texto-aside p {
-    margin-top: 1em;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-footer{
+.texto-atras{
+    width: 95%;
+    height: 75%;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 3rem 2rem;
+    overflow: auto;
+    box-sizing: border-box;
+}
+.texto-atras > p{
+    box-sizing: border-box;
+    color: #0a3871;
+}
+
+.boton-aside{
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.contenedor-footer{
+    position: absolute;
+    bottom: 0;
     display: flex;
-    width: 100%;
-    height: 3em;
-    margin-top: 2em;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
     background-color: #0a3871;
     color: #fff;
-    align-items: center;
-    font-size: 14px;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
 }
-
+.contenedor-footer p {
+    font-size: .8rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.contenedor-footer span{
+    font-size: .8rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #33f6a1;
+}
+.contenedor-footer a:visited{
+    color: #fff;
+}

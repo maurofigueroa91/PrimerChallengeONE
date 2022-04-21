@@ -4,45 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="grid.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Encriptador Alura</title>
 </head>
+
 <body>
-    <header class="header-index">
-        <a href="https://www.aluracursos.com/" target="_Blank">
-            <img src="imagenes/Logo.png" alt="Logo de Alura">
-        </a>
-    </header>
-    <main>
+    <div class="contenedor">
+        <header class="encabezado">
+            <a href="https://www.aluracursos.com/" target="_blank"><img src="imagenes/Logo.png" alt="Logo de alura"></a>
+        </header>
 
-        <section class="seccion-principal">
-            <textarea class="area-principal" cols="70" rows="10" placeholder="Ingresa el texto aqui"></textarea>
+        <main class="principal">
 
-            <div class="contenedor-botones">
+            <section class="seccion-principal">
+                <textarea class="area" id="area" placeholder="Ingrese su texto aqui"></textarea>
+                <div class="contenedor-botones">
+                    <label ><ion-icon name="alert-circle" class="icono-alert" ></ion-icon>Solo letras minúsculas y sin acentos</label>
+                    <input type="button" class="btn-encriptar" value="Encriptar" >
+                    <input type="button" class="btn-limpiar" value="Limpiar">
+                    <input type="button" class="btn-desencriptar" value="Desencriptar">
+                </div>
+            </section>
 
-                <input type="button" class="btn-encriptar" value="Encriptar" >
-                
-                <input type="button" class="btn-desencriptar" value="Desencriptar">
+            <aside class="aside">
+                <div class="munieco-contenedor">
+                    <div class="munieco-adelante">  
+                        <div class="imagen-aside">
+                            <img src="imagenes/Muñeco.png" alt="">
+                        </div>                       
+                        <div class="texto-aside">
+                            <h3>
+                                Ningún mensaje fue encontrado
+                            </h3>
+                            <p>
+                                Ingresa el texto que deseas encriptar o desencriptar
+                            </p>
+                        </div>                        
+                        <div class="boton-aside">                           
+                        </div>                      
+                    </div>
+                    <div class="munieco-atras">                      
+                        <div class="texto-atras">
+                            <h3 id="tituloAsideAtras"></h3>
+                            <p class="p-atras"></p>
+                        </div>                      
+                        <div class="boton-aside">
+                            <input type="button" class="btn-copiar" value="Copiar">
+                        </div>                      
+                    </div>
+                </div>                
+            </aside>   
 
+        </main>
+        
+        <footer>
+            <div class="contenedor-footer">
+                <a href="https://app.aluracursos.com/user/figueroa-mauro" target="_blank"><p>Created by <span>F</span>M <span>Developer</span></p></a>
             </div>
-        </section>
+        </footer>
+    </div>
 
-        <aside>
-            <div>
-                <img src="imagenes/Muñeco.png" alt="Muñeco de Alura">
-            </div>
-            <div class="texto-aside">
-                <h3>Ningún mensaje encontrado</h3>
-                <p>Ingresa el texto que deseas encriptar o desencriptar</p>
-            </div>
-        </aside>
-
-    </main>
-
-    <footer>
-        <p>Mauro Figueroa - 2022</p>
-    </footer>
+    <script src="logica.js"></script>
+    <script src="funciones.js"></script>
+    <script src="principal.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

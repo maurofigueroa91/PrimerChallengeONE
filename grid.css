@@ -3,8 +3,7 @@ main{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas: "section section aside"
-                        /* "section section aside" */
-                        /* "footer footer footer"; */
+
 }
 
 
@@ -38,13 +37,47 @@ footer{
 }
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1280px){
     html{
         font-size: 13px;
     }
+
+
+    @media screen and (max-height:390px) {
+        @media screen and (min-width: 850px) {
+            html{
+             font-size: 11px;
+            }
+            .principal{
+                 max-height: 100vh;
+             }
+            .aside{
+               height: 95vh;
+          }
+        }
+    }
+
+
+    @media screen and (min-width: 850px) {
+
+        @media  screen and (max-height:850px) {
+            html{
+                font-size: 11px;
+            }
+            .principal{
+                max-height: 100vh;
+            }
+            .aside{
+                height: 95vh;
+            }
+
+        }
+        
+    }
+
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:800px){
 
     main{
         display: grid;
@@ -54,22 +87,23 @@ footer{
                              "aside aside aside";
 
     }
-    .contenedor{
-        height: 100vh;
-    }
+
+
     .seccion-principal{
-        height: 40vh;
-        min-height: 0;
+
+        height: 30rem;
+        
     }
+
     .aside{
-        height: 30vh;
-        min-height: 0;
-
+        display: flex;
+        align-items: center;
+        height: 30rem;
+        padding-bottom: 4rem;
     }
-    .munieco-contenedor{
-        min-height: 0;
-        width: 95%;
 
+    .munieco-contenedor{
+        width: 95%;
     }
     .texto-atras{
         margin: 0 auto;
