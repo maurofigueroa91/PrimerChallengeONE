@@ -34,23 +34,61 @@ function desencriptarTexto(){
 
 function agregarEncriptado(texto){
    var textos = "";
-   textos = texto.replace(/a/g,"AI");
-   textos = textos.replace(/e/g,"ENTER");
-   textos = textos.replace(/i/g,"IMES");
-   textos = textos.replace(/o/g,"OBER");
-   textos = textos.replace(/u/g,"UFAT");
-   textoEncriptado = textos;
+
+   for(var i = 0; i < texto.length; i++){
+      if(texto[i] == "a"){
+         textos += "ai";
+      }
+      else if(texto[i] == "e"){
+         textos += "enter";
+      }
+      else if(texto[i] == "i"){
+         textos += "imes";
+      }
+      else if(texto[i] == "o"){
+         textos += "ober";
+      }
+      else if(texto[i] == "u"){
+         textos += "ufat";
+      }
+      else{
+         textos += texto[i];
+      }
+   }
+
    return textos.toLowerCase();
 }
 
 function quitarEncriptado(texto){
    var textos = "";
-   textos = texto.replace(/ai/g,"a");
-   textos = textos.replace(/enter/g,"e");
-   textos = textos.replace(/imes/g,"i");
-   textos = textos.replace(/ober/g,"o");
-   textos = textos.replace(/ufat/g,"u");
-   return textos
+
+   for(var i = 0; i < texto.length; i++){
+      if(texto[i] == "a"){
+         textos += "a";
+         i = i+1;
+      }
+      else if(texto[i] == "e"){
+         textos += "e";
+         i += 4;
+      }
+      else if(texto[i] == "i"){
+         textos += "i";
+         i+= 3;
+      }
+      else if(texto[i] == "o"){
+         textos += "o";
+         i+=3;
+      }
+      else if(texto[i] == "u"){
+         textos += "u";
+         i+=3;
+      }
+      else{
+         textos += texto[i];
+      }
+   }
+
+   return textos.toLowerCase();
 }
 
 function rotarAside(){
