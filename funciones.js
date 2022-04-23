@@ -111,6 +111,7 @@ function rotarAside(){
     var textoAsideAtras = document.querySelector(".p-atras");
     var textArea = document.getElementById("area");
     textArea.value = textoAsideAtras.innerHTML;
+    navigator.clipboard.writeText(textoAsideAtras.innerHTML);
     copiar.value = "Copiado!";
     copiar.style.color="darkturquoise";
     swal("Mensaje copiado!", "El mensaje fue copiado y está listo para desencriptar.", "success");

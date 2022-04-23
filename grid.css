@@ -3,9 +3,7 @@ main{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas: "section section aside"
-
 }
-
 
 .contenedor{
     display: grid;
@@ -25,7 +23,6 @@ header{
 }
 section{
     grid-area: section;
-
 }
 
 aside{
@@ -41,7 +38,6 @@ footer{
     html{
         font-size: 13px;
     }
-
 
     @media screen and (max-height:390px) {
         @media screen and (min-width: 850px) {
@@ -88,11 +84,8 @@ footer{
 
     }
 
-
     .seccion-principal{
-
         height: 30rem;
-        
     }
 
     .aside{
